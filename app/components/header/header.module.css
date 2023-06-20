@@ -1,0 +1,43 @@
+.header {
+  height: 10vh;
+  min-height: 80px;
+  border-bottom: 1px solid #d0d7e0;
+}
+.container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.logo a {
+  display: block;
+  display: flex;
+  align-items: center;
+}
+.logo a img {
+  height: 48px;
+}
+
+.links {
+  display: flex;
+  gap: 1.8em;
+  align-items: center;
+}
+
+.links a {
+  color: var(--accent-color);
+  font-size: 1.15rem;
+}
+.links .active {
+  color: var(--primary-color);
+}
+.links button {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 0.6em 0.6em;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1rem;
+}
