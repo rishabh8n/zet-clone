@@ -1,0 +1,157 @@
+.aboutPage {
+  color: rgb(47, 52, 64);
+}
+.ourMission {
+  height: 95vh;
+  position: relative;
+  display: flex;
+  color: white;
+  align-items: center;
+  flex-direction: column;
+}
+
+.ourMission img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+}
+.ourMission .text {
+  margin-top: 10%;
+  width: 35%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.ourMission .text h2 {
+  font-size: 2.7rem;
+  text-align: center;
+}
+.ourMission .text h3 {
+  letter-spacing: 2px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+.ourMission .text p {
+  text-align: center;
+  font-size: 0.92rem;
+  line-height: 1.4rem;
+}
+.evolve {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.evolve h2 {
+  margin-top: 1.2em;
+  font-size: 2.2rem;
+}
+.evolve img {
+  width: 80%;
+  margin-top: 3.5em;
+  overflow-x: auto;
+}
+.gotFeatured {
+  margin-top: 1.5em;
+  background-color: rgb(250, 251, 254);
+  padding: 2.5em 12%;
+}
+.gotFeatured h2 {
+  font-size: 2.2rem;
+  margin: 0.75em 0;
+}
+.featuredContainer {
+  display: flex;
+  gap: 15px;
+}
+.featuredCard {
+  flex-basis: 20%;
+}
+.featuredCard img {
+  width: 100%;
+}
+.meetInvestors,
+.meetFounders {
+  padding: 2.5em 10%;
+}
+.meetInvestors h2,
+.meetFounders h2 {
+  font-size: 2.2rem;
+  margin: 0.75em 0;
+}
+.meetFounders {
+  background: linear-gradient(
+    168deg,
+    rgb(233, 244, 255) 0%,
+    rgb(255, 255, 255) 100%
+  );
+}
+.meetFounders h2,
+.meetFounders p {
+  text-align: center;
+  margin: 0.25em 0;
+}
+.meetFounders p {
+  font-size: 1.3rem;
+  color: rgb(89, 99, 121);
+}
+.investmentCompanies,
+.investors,
+.founders {
+  padding: 3%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 0.5em;
+}
+.founder p {
+  text-align: left;
+}
+.investor,
+.invCompCard,
+.founder {
+  width: 250px;
+  margin: 3em 0;
+}
+.invCompCard {
+  margin: 2em !important;
+  padding: 0 !important;
+}
+.invCompCard img {
+  margin: 0;
+  width: 250px;
+}
+.investor,
+.founder {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: none !important;
+  box-shadow: none !important;
+}
+.investor:hover {
+  background: none !important;
+}
+.invCompCard {
+  background: none !important;
+  box-shadow: none !important;
+}
+.investor img,
+.founder img {
+  width: 100%;
+  margin-bottom: 0.75em;
+}
+.investor h3 {
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+.investor p {
+  font-size: 0.9em;
+  color: rgb(134, 145, 168);
+}
+
+.footer {
+  width: 100%;
+  object-fit: cover;
+}
