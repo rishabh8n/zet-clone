@@ -1,30 +1,18 @@
 "use client";
 import Image from "next/image";
-import Link from "next/link";
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import styles from "./page.module.css";
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
-import { animate, motion } from "framer-motion";
-
-const cardVariants = {
-  offscreen: {
-    y: "100%",
-    opacity: 0,
-  },
-  onscreen: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.6,
-    },
-  },
-};
+import { animate, motion, useScroll } from "framer-motion";
+import Tilt from "react-vanilla-tilt";
 
 const animation = { duration: 1100, easing: (t) => t };
 let dragged = false;
 
 const HomePage = () => {
+  const { scrollYProgress } = useScroll();
+
   //brands slider
   const [sliderRef, instanceRef] = useKeenSlider(
     {
@@ -160,11 +148,18 @@ const HomePage = () => {
         <p>We are trusted by best brand in the country</p>
         <motion.div
           className={styles.products}
-          initial="offscreen"
-          whileInView="onscreen"
-          viewport={{ amount: 0 }}
+          onViewportEnter={(e) => {
+            let sc = scrollYProgress.current - scrollYProgress.prev;
+            if (sc >= 0) {
+              animate(
+                ".cards",
+                { opacity: [0, 1], y: [100, 0] },
+                { duration: 0.6, ease: "easeInOut" }
+              );
+            }
+          }}
         >
-          <motion.div className={styles.product} variants={cardVariants}>
+          <Tilt className={`cards ${styles.product}`}>
             <img src="/CC.webp" alt="CC" />
             <div className="text">
               <h3>CREDIT CARDS</h3>
@@ -173,49 +168,37 @@ const HomePage = () => {
                 Top Banks.
               </p>
             </div>
-          </motion.div>
-          <motion.div
-            className={styles.product}
-            variants={cardVariants}
-            transition={{ ease: "easeInOut" }}
-          >
+          </Tilt>
+          <Tilt className={`cards ${styles.product}`}>
             <img src="/Loan.webp" alt="CC" />
             <div className="text">
-              <h3>CREDIT CARDS</h3>
+              <h3>LOANS</h3>
               <p>
-                100% Contactless Application Process with Instant Approval From
-                Top Banks.
+                100% online process. Instant offers. Affordable Rate of Interest
+                on loans.
               </p>
             </div>
-          </motion.div>
-          <motion.div
-            className={styles.product}
-            variants={cardVariants}
-            transition={{ ease: "easeInOut" }}
-          >
+          </Tilt>
+          <Tilt className={`cards ${styles.product}`}>
             <img src="/BNPL.webp" alt="CC" />
             <div className="text">
-              <h3>CREDIT CARDS</h3>
+              <h3>BUY NOW PAY LATER</h3>
               <p>
-                100% Contactless Application Process with Instant Approval From
-                Top Banks.
+                Short-term financing that allows consumers to make purchases and
+                pay for them over time.
               </p>
             </div>
-          </motion.div>
-          <motion.div
-            className={styles.product}
-            variants={cardVariants}
-            transition={{ ease: "easeInOut" }}
-          >
+          </Tilt>
+          <Tilt className={`cards ${styles.product}`}>
             <img src="/AccountSave.webp" alt="CC" />
             <div className="text">
-              <h3>CREDIT CARDS</h3>
+              <h3>SAVING ACCOUNTS</h3>
               <p>
-                100% Contactless Application Process with Instant Approval From
-                Top Banks.
+                ZET offers range of savings account that suits your personal
+                needs for the banking.
               </p>
             </div>
-          </motion.div>
+          </Tilt>
         </motion.div>
       </div>
 
@@ -268,46 +251,53 @@ const HomePage = () => {
         </div>
         <motion.div
           className={styles.whyUsCardContainer}
-          initial="offscreen"
-          whileInView="onscreen"
-          viewport={{ amount: 0 }}
+          onViewportEnter={(e) => {
+            let sc = scrollYProgress.current - scrollYProgress.prev;
+            if (sc >= 0) {
+              animate(
+                ".wcard",
+                { opacity: [0, 1], y: [100, 0] },
+                { duration: 0.6, ease: "easeInOut" }
+              );
+            }
+          }}
         >
-          <motion.div className={styles.whyUsCard} variants={cardVariants}>
+          <motion.div className={`wcard ${styles.whyUsCard}`}>
             <img src="/zero_investment.svg" alt="zero_investment" />
             <div className="text">
               <h3>Zero Investment</h3>
               <p>Build your business without any investment</p>
             </div>
           </motion.div>
-          <motion.div className={styles.whyUsCard} variants={cardVariants}>
+          <motion.div className={`wcard ${styles.whyUsCard}`}>
             <img src="/quick_payout.svg" alt="quick_payout" />
             <div className="text">
               <h3>Quick Payout</h3>
               <p>Direct Payout in your bank account in short time</p>
             </div>
           </motion.div>
-          <motion.div className={styles.whyUsCard} variants={cardVariants}>
+          <motion.div className={`wcard ${styles.whyUsCard}`}>
             <img src="/Fin_products.svg" alt="Fin_products" />
             <div className="text">
               <h3>Limitless Earnings</h3>
               <p>Direct Payout in your bank account in short time</p>
             </div>
           </motion.div>
-          <motion.div className={styles.whyUsCard} variants={cardVariants}>
+          <motion.div className={`wcard ${styles.whyUsCard}`}>
             <img src="/Icon_support.svg" alt="Icon_support" />
             <div className="text">
               <h3>Training & Upskilling</h3>
               <p>Get trained by finance and sales experts</p>
             </div>
           </motion.div>
-          <motion.div className={styles.whyUsCard} variants={cardVariants}>
+          <motion.div className={`wcard ${styles.whyUsCard}`}>
             <img src="/customerSupport.svg" alt="customerSupport" />
             <div className="text">
               <h3>Customer Support</h3>
               <p>Access tools and content to build relationship</p>
             </div>
           </motion.div>
-          <motion.div className={styles.whyUsCard} variants={cardVariants}>
+          <motion.div className={`wcard ${styles.whyUsCard}`}>
             <img src="/financialProduct.svg" alt="financialProduct" />
             <div className="text">
               <h3>Financial Products</h3>

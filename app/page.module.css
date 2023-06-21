@@ -87,24 +87,27 @@
 }
 .product {
   flex-basis: calc(50% - 2em);
-  border-radius: 15px;
-  padding: 2.5em 2em;
+  width: auto !important;
+  box-shadow: none !important;
+  border-radius: 15px !important;
+  padding: 2.5em 2em !important;
+  margin: 0 !important;
   display: flex;
   gap: 10px;
   align-items: center;
   transition: background-color 0.25s ease;
 }
 .product:nth-child(1) {
-  background-color: #edffec;
+  background-color: #edffec !important;
 }
 .product:nth-child(2) {
-  background-color: #fff1ca;
+  background-color: #fff1ca !important;
 }
 .product:nth-child(3) {
-  background-color: #ffeee7;
+  background-color: #ffeee7 !important;
 }
 .product:nth-child(4) {
-  background-color: #ffeee7;
+  background-color: #ffeee7 !important;
 }
 .product h3 {
   letter-spacing: 2px;
@@ -125,7 +128,7 @@
 }
 
 .product:hover {
-  background-color: white;
+  background-color: white !important;
 }
 
 .info {
