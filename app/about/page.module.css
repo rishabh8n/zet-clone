@@ -2,7 +2,8 @@
   color: rgb(47, 52, 64);
 }
 .ourMission {
-  height: 95vh;
+  height: 60vw;
+  min-height: 450px;
   position: relative;
   display: flex;
   color: white;
@@ -14,11 +15,13 @@
   position: absolute;
   top: 0;
   left: 0;
+  height: 100%;
   width: 100%;
+  object-fit: cover;
   z-index: -1;
 }
 .ourMission .text {
-  margin-top: 10%;
+  margin-top: 15vw;
   width: 35%;
   display: flex;
   align-items: center;
@@ -28,6 +31,7 @@
 .ourMission .text h2 {
   font-size: 2.7rem;
   text-align: center;
+  white-space: nowrap;
 }
 .ourMission .text h3 {
   letter-spacing: 2px;
@@ -47,11 +51,17 @@
 .evolve h2 {
   margin-top: 1.2em;
   font-size: 2.2rem;
+  text-align: center;
+}
+.evolve div {
+  width: 80%;
+  overflow-x: auto;
 }
 .evolve img {
-  width: 80%;
+  width: 100%;
+  min-width: 800px;
   margin-top: 3.5em;
-  overflow-x: auto;
+  margin-left: 0;
 }
 .gotFeatured {
   margin-top: 1.5em;
@@ -103,7 +113,8 @@
   padding: 3%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 0.5em;
+  gap: 1.5em;
+  justify-items: center;
 }
 .founder p {
   text-align: left;
@@ -111,16 +122,19 @@
 .investor,
 .invCompCard,
 .founder {
-  width: 250px;
+  width: 250px !important;
   margin: 3em 0;
 }
 .invCompCard {
-  margin: 2em !important;
+  margin: 0 !important;
   padding: 0 !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .invCompCard img {
   margin: 0;
-  width: 250px;
+  width: 100%;
 }
 .investor,
 .founder {
@@ -154,4 +168,51 @@
 .footer {
   width: 100%;
   object-fit: cover;
+}
+
+@media only screen and (max-width: 1080px) {
+  .ourMission .text {
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .ourMission {
+    height: 85vh;
+  }
+  .ourMission .text {
+    width: 70%;
+    margin-top: 20vh;
+  }
+  .evolve h2 {
+    font-size: 1.3rem;
+  }
+  .meetInvestors h2 {
+    text-align: center;
+  }
+  .investmentCompanies,
+  .investors,
+  .founders {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5em;
+  }
+  .investor,
+  .invCompCard,
+  .founder {
+    width: 200px !important;
+    margin: 3em 0;
+  }
+}
+@media only screen and (max-width: 570px) {
+  .investmentCompanies,
+  .investors,
+  .founders {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5em;
+  }
+  .investor,
+  .invCompCard,
+  .founder {
+    width: 250px !important;
+    margin: 3em 0;
+  }
 }

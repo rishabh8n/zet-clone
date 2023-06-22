@@ -1,7 +1,7 @@
 .hero .container {
   background-color: #e9f4ff;
   width: 76%;
-  height: 58vh;
+  /* height: 58vh; */
   margin: 18vh auto 20vh;
   display: flex;
   align-items: center;
@@ -32,8 +32,9 @@
   justify-content: center;
 }
 .heroImg img {
-  height: calc(100% + 7vh);
-  margin-top: -8.5vh;
+  width: 90%;
+  /* height: calc(100% + 7vh); */
+  margin-top: -10%;
 }
 
 .brandSection {
@@ -137,8 +138,8 @@
   justify-content: center;
   align-items: center;
   clip-path: polygon(0% 25%, 100% 0%, 100% 75%, 0% 100%);
-  padding: 7em;
-  height: 110vh;
+  padding: 12%;
+  height: 130vh;
 }
 
 .info .content {
@@ -147,7 +148,7 @@
   position: relative;
   border-radius: 4px;
   clip-path: polygon(0px 30%, 100% 0%, 100% 70%, 0px 100%);
-  width: 90%;
+  width: 100%;
   height: 100%;
 }
 .content img {
@@ -163,9 +164,6 @@
   min-width: 0px;
   margin-left: -10vw;
   z-index: 99;
-  /* background-color: aqua; */
-}
-.slider {
 }
 .slideItem {
   font-size: 1.75rem;
@@ -238,4 +236,107 @@
 }
 .whyUsCard img {
   height: 75px;
+}
+
+@media only screen and (max-width: 1440px) {
+  .info {
+    height: 120vh;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  .info {
+    height: 100vh;
+  }
+}
+@media only screen and (max-width: 1080px) {
+  .heroImg {
+    width: 55%;
+  }
+  .text {
+    width: 45%;
+  }
+  .heroImg img {
+    margin-top: -45%;
+  }
+  .product {
+    flex-basis: 100%;
+  }
+  .info {
+    height: 80vh;
+    padding: 5%;
+  }
+}
+@media only screen and (max-width: 850px) {
+  .heroImg {
+    display: none;
+  }
+  .text {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    padding: 1.5em;
+  }
+  .slidesContainer {
+    width: 95% !important;
+    margin: auto 0;
+  }
+  .productsSection {
+    padding: 4em 2%;
+  }
+  .content img {
+    display: none;
+  }
+  .content .text {
+    margin: 0;
+  }
+  .whyUs {
+    width: 100%;
+    margin: 0;
+    margin-top: 4em;
+    justify-content: center;
+    align-items: center;
+  }
+  .whyUsCardContainer {
+    width: auto;
+    margin: 0;
+    justify-content: center;
+  }
+  .whyUsHero {
+    display: none;
+  }
+  .whyUsCard {
+    flex-basis: calc(33% - 2em);
+    min-width: 200px;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .hero .container {
+    width: 90%;
+    margin: 10vh auto;
+  }
+  .productsSection {
+    padding: 4em 0.2em;
+  }
+  .products {
+    width: 100%;
+    margin: 0;
+  }
+  .info {
+    height: 50vh;
+  }
+  .content {
+    align-items: center;
+    justify-content: center;
+  }
+  .content .text {
+    height: 60%;
+  }
+  .slideItem {
+    font-size: 0.85rem;
+  }
+  .whyUsCard {
+    flex-basis: 100%;
+    min-width: 200px;
+    align-items: center;
+  }
 }

@@ -24,7 +24,9 @@ const AboutPage = () => {
       </div>
       <div className={styles.evolve}>
         <h2>How we evolved over the years</h2>
-        <img src="/Growth.webp" alt="growth" />
+        <div>
+          <img src="/Growth.webp" alt="growth" />
+        </div>
       </div>
 
       {/* Got Featured */}

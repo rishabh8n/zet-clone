@@ -2,12 +2,14 @@
   height: 10vh;
   min-height: 80px;
   border-bottom: 1px solid #d0d7e0;
+  position: relative;
 }
 .container {
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: 0 12%;
 }
 
 .logo a {
@@ -40,4 +42,75 @@
   font-weight: 500;
   font-size: 1rem;
   line-height: 1rem;
+}
+.Ham {
+  /* background-color: rgb(95, 54, 54); */
+  position: relative;
+  height: 25px;
+  width: 30px;
+  display: none;
+  background: none;
+}
+
+.Ham div {
+  width: 100%;
+  height: 5px;
+  background-color: #5e5e5e;
+  position: absolute;
+  border-radius: 2px;
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.Ham div:nth-child(1) {
+  top: 0;
+  left: 0;
+}
+.Ham div:nth-child(2) {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+.Ham div:nth-child(3) {
+  bottom: 0;
+  left: 0;
+}
+.Ham.active div:nth-child(1) {
+  transform: rotateZ(-45deg);
+}
+.Ham.active div:nth-child(2) {
+  transform: scaleX(0);
+}
+.Ham.active div:nth-child(3) {
+  transform: rotateZ(45deg);
+}
+.mobileLinks {
+  position: absolute;
+  z-index: 99999;
+  top: 80px;
+  left: 0;
+  background-color: white;
+  border-top: 1px solid #d0d7e0;
+  display: none;
+  width: 100%;
+  height: 110vh;
+}
+@media only screen and (max-width: 850px) {
+  .Ham {
+    display: block;
+  }
+  .links {
+    display: none;
+  }
+  .mobileLinks {
+    display: block;
+  }
+  .mobileLinks .links {
+    display: flex;
+    flex-direction: column;
+    height: 60vh;
+    align-items: center;
+    justify-content: center;
+    gap: 3em;
+  }
 }
